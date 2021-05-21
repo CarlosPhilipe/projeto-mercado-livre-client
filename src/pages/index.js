@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function Home() {
-  return (
-    <div> aqui </div>
-  )
+import Home from './home/Home';
+
+export default function Main() {
+  return <Home />;
 }
