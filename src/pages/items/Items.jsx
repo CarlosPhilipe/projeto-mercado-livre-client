@@ -1,14 +1,10 @@
 import React from 'react';
 
-import { useRouter } from 'next/router'
+import MainTemplate from '../../template/MainTemplate';
 
 function Items() {
-  const router = useRouter();
-
-  console.log(router);
-
   return (
-    <div>Items</div>
+    <MainTemplate>Items</MainTemplate>
   );
 }
 
