@@ -23,7 +23,7 @@ function ProductItem(props) {
       <Style.DescriptionContainer>
         <Style.HeaderContainer>
           <Style.Price>
-            {price.currency}  {price.amount} {price.decimals}
+            {price}
           </Style.Price>
           {freeShipping && (
             <Style.FreeShippingImage
