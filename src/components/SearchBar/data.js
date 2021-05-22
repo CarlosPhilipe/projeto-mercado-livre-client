@@ -1,10 +1,10 @@
 const logo = {
-  src: 'logo_ml.png',
+  src: '/logo_ml.png',
   alt: 'Lodo mercado livre',
 };
 
 const searchIcon = {
-  src: 'ic_search.png',
+  src: '/ic_search.png',
   alt: 'Icone de busca',
 };
 
