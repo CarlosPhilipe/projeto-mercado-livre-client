@@ -4,9 +4,7 @@ import MainTemplate from '../../template/MainTemplate';
 
 function Home() {
   return (
-    <MainTemplate>
-      Home
-    </MainTemplate>
+    <MainTemplate />
   );
 }
 
