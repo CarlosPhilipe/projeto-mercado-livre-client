@@ -12,7 +12,7 @@ function SearchBar() {
   const { query } = useRouter();
 
   useEffect(() => {
-    if (query.q) {
+    if (query && query.q) {
       setSearchString(query.q);
     }
   },[query]);
@@ -35,6 +35,7 @@ function SearchBar() {
         <Style.ImageLogo src={info.logo.src} alt={info.logo.alt} />
         <Style.SearchInputContainer>
           <Style.SearchInput
+            id='serach_input'
             name='serach_input'
             value={searchString}
             onChange={e => { setSearchString(e.target.value);}}
