@@ -1,4 +1,5 @@
 import React from 'react';
+import { shape, string, number } from 'prop-types';
 
 import itemFormat from './formatter';
 import Style from './ProductItemDetail.style';
@@ -47,5 +48,22 @@ function ProductItemDetail({ item }) {
     </Style.Container>
   );  
 }
+
+ProductItemDetail.propTypes = {
+  item: shape({
+    id: string,
+    title: string,
+    price: shape({
+      currency: string,
+      amount: number,
+      decimals: number,
+    }),
+    picture: string,
+  }),
+};
+
+ProductItemDetail.defaulfProps = {
+  item: {},
+};
 
 export default ProductItemDetail;
