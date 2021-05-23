@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   background-color: #FFFFFF;
+  color: #333333;
+`;
+
+const Content = styled.div`
   padding: 16px 0;
   display: flex;
-  color: #333333;
 `;
 
 const DescriptionContainer = styled.div`
@@ -40,8 +45,13 @@ const FreeShippingImage = styled.img`
   align-self: center;
 `;
 
+const Address = styled.div`
+  padding-top: 48px;
+`;
+
 export default {
   Container,
+  Content,
   DescriptionContainer,
   HeaderContainer,
   Link,
@@ -49,4 +59,5 @@ export default {
   Price,
   Title,
   FreeShippingImage,
+  Address,
 };

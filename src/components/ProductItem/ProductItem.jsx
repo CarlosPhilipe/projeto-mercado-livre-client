@@ -15,29 +15,35 @@ function ProductItem(props) {
     priceSymbol,
     picture,
     freeShipping,
+    address
   } = itemFormat(item);
 
   return(
     <Style.Container>
-      <Style.Link href={`/items/${id}`}>
-        <Style.Image src={picture} alt={info.productImageAlt} />
-      </Style.Link>
-      <Style.DescriptionContainer>
-        <Style.HeaderContainer>
-          <Style.Price>
-            {`${priceSymbol} ${price}`}
-          </Style.Price>
-          {freeShipping && (
-            <Style.FreeShippingImage
-              src={info.freeShipping.src}
-              alt={info.freeShipping.alt}
-            />
-          )}
-        </Style.HeaderContainer>
-        <Style.Title>
-          {title}
-        </Style.Title>
-      </Style.DescriptionContainer>
+      <Style.Content>
+        <Style.Link href={`/items/${id}`}>
+          <Style.Image src={picture} alt={title} />
+        </Style.Link>
+        <Style.DescriptionContainer>
+          <Style.HeaderContainer>
+            <Style.Price>
+              {`${priceSymbol} ${price}`}
+            </Style.Price>
+            {freeShipping && (
+              <Style.FreeShippingImage
+                src={info.freeShipping.src}
+                alt={info.freeShipping.alt}
+              />
+            )}
+          </Style.HeaderContainer>
+          <Style.Title>
+            {title}
+          </Style.Title>
+        </Style.DescriptionContainer>
+      </Style.Content>
+      <Style.Address>
+        {address}
+      </Style.Address>
     </Style.Container>
   );
 }
