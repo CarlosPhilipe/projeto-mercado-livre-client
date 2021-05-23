@@ -1,4 +1,4 @@
-const titleLabel = 'Descrioção do produto'; 
+const titleLabel = 'Descrição do produto';
 const buttonLabel = 'Comprar';
 
 const labelContition = (condition, soldQuantity) => {
