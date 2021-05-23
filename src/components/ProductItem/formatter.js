@@ -1,12 +1,10 @@
-import currencyFormat from '../../helpers/currency';
+import { symbols } from '../../helpers/currency';
 
 const itemFormat = (item) => ({
   ...item,
   freeShipping: item.free_shipping,
-  price: currencyFormat({
-    value: Number(`${item.price.amount}.${item.price.decimals}`),
-    currency: item.price.currency,
-  }),
+  priceSymbol: symbols[item.price.currency],
+  price: Number(`${item.price.amount}.${item.price.decimals}`).toLocaleString(),
 });
 
 

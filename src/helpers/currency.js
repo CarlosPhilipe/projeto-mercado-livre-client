@@ -1,13 +1,20 @@
 const symbols = {
-  'ARS': 'es-ar',
-  'BRS': 'pt-BT',
-  'USD': 'en-US',
+  'ARS': '$',
+  'BRS': 'R$',
+  'USD': '$',
 };
 
-const format = ({ value, currency = 'BRS'}) => (
-  Number(value).toLocaleString(symbols[currency], {
-    currency: currency,
-    style: 'currency',
-  }));
+const formatDecimals= (decimals) => {
+  if (decimals > 0) {
+    if (String(decimals).length === 2) {
+      return decimals;
+    }
+    return decimals * 10;
+  }
+  return '00';
+};
 
-export default format;
+export {
+  symbols,
+  formatDecimals,
+};
