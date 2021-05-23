@@ -2,6 +2,7 @@ import React from 'react';
 
 import itemFormat from './formatter';
 import Style from './ProductItemDetail.style';
+import info from './data';
 
 function ProductItemDetail({ item }) {
   const {
@@ -19,19 +20,16 @@ function ProductItemDetail({ item }) {
   return (
     <Style.Container>
       <Style.DescriptionContent>
-        <Style.ImageProduct src={picture} />
+        <Style.ImageProduct src={picture} alt={title} />
         <Style.TitleLabel>
-          Descrioção do produto
+          {info.titleLabel}
         </Style.TitleLabel>
-        <Style.Description
-          dangerouslySetInnerHTML={{ __html: description }}
-        >
+        <Style.Description dangerouslySetInnerHTML={{ __html: description }}>
         </Style.Description>
       </Style.DescriptionContent>
       <Style.PriceContent>
         <Style.Information>
-          {condition && (`${condition} - `)}
-          {soldQuantity && (`${soldQuantity} vendidos`)}
+          {info.labelContition(condition, soldQuantity)}
         </Style.Information>
         <Style.Title>
           {title}
@@ -44,7 +42,7 @@ function ProductItemDetail({ item }) {
             {priceDecimals}
           </Style.PriceDecimals>
         </Style.Price>
-          <Style.SalleButton>Comprar</Style.SalleButton>
+          <Style.SalleButton>{info.buttonLabel}</Style.SalleButton>
       </Style.PriceContent>
     </Style.Container>
   );  
