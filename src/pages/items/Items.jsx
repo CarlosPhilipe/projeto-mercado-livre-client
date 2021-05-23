@@ -3,12 +3,14 @@ import { shape, arrayOf, string } from 'prop-types';
 
 import getInitialProps from '../../server/Items';
 import MainTemplate from '../../template/MainTemplate';
+import BreadCrumb from '../../components/BreadCrumb';
 import ProductItem from '../../components/ProductItem';
 function Items(props) {
-  const { items } = props;
+  const { items, categories } = props;
 
   return (
     <MainTemplate>
+      <BreadCrumb categories={categories} />
       {items.map((item) => {
         return (<ProductItem key={item.id} item={item} />)
       })}
