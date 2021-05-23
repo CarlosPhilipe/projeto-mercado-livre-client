@@ -40,6 +40,7 @@ function SearchBar() {
             onChange={e => { setSearchString(e.target.value);}}
             placeholder={info.SearchInputPlaceholder}
             onKeyPress={checkKeyPressed}
+            tabIndex={1}
           />
           <Style.SearchButton onClick={canBeSubmit}>
             <Style.SearchIcon src={info.searchIcon.src} alt={info.searchIcon.alt} />
