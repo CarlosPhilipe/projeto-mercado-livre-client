@@ -2,19 +2,18 @@ import axios from 'axios';
 
 const getInitialProps = async ({ query }) => {
   // Call my external API endpoin
-  if (!query.q) {
+  if (!query.id) {
     return {};
   }
 
   const response = await axios
-    .get(`http://127.0.0.1:8000/api/items?q=${query.q}&limit=4`)
-    .then(({ data }) => data)
+    .get(`http://127.0.0.1:8000/api/items/${query.id}`)
+    .then(({ data }) => data);
 
-  const { items, categories } = response;
+  const { item } = response;
 
   return {
-    items,
-    categories,
+    item,
   }
 }
 

@@ -1,18 +1,22 @@
 import React from 'react';
-// import { shape, arrayOf, string } from 'prop-types';
+import { shape, } from 'prop-types';
 
 import MainTemplate from '../../template/MainTemplate';
-// import ProductItem from '../../components/ProductItem';
+import ProductItemDetail from '../../components/ProductItemDetail';
 import getInitialProps from '../../server/ItemDetail';
 
-import { useRouter } from 'next/router'
-
-function ItemDetail() {
-  // const router = useRouter();
+function ItemDetail(props) {
+  const { item } = props;
 
   return (
-    <MainTemplate><div /></MainTemplate>
+    <MainTemplate>
+      <ProductItemDetail item={item} />
+    </MainTemplate>
   );
+}
+
+ItemDetail.propTypes = {
+  item: shape({}),
 }
 
 ItemDetail.getInitialProps = getInitialProps;
