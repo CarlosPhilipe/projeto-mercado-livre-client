@@ -1,8 +1,9 @@
 import React from 'react';
 import { shape, bool, string, number } from 'prop-types';
 
-import Style from './ProductItem.style';
 import itemFormat from './formatter';
+
+import Style from './ProductItem.style';
 import info from './data';
 
 function ProductItem(props) {
@@ -11,6 +12,7 @@ function ProductItem(props) {
     id,
     title,
     price,
+    priceSymbol,
     picture,
     freeShipping,
   } = itemFormat(item);
@@ -23,7 +25,7 @@ function ProductItem(props) {
       <Style.DescriptionContainer>
         <Style.HeaderContainer>
           <Style.Price>
-            {price}
+            {`${priceSymbol} ${price}`}
           </Style.Price>
           {freeShipping && (
             <Style.FreeShippingImage
