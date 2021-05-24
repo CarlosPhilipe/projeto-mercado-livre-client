@@ -6,7 +6,7 @@ Este projeto se divide em duas partes, uma parte de front e outra de back.
 
 A parte do back foi desenvolvida separadamente mas seus arquivos foram copiados e colados dentro deste projeto, caso queira olhar o repositório do projeto do server, dentro da pastar /server há um README.md lá vai ter o link para o repositório dele.
 
-Já a parte do cliente está dentro de uma pasta chamada client
+Já a parte do cliente está dentro de uma pasta chamada /frontend
 
 ## Vamos começar
 ### No server
