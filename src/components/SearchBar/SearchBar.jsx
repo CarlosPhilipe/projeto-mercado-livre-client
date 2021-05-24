@@ -32,7 +32,9 @@ function SearchBar() {
   return (
     <Style.Container>
       <Style.Content>
-        <Style.ImageLogo src={info.logo.src} alt={info.logo.alt} />
+        <Style.LinkLogo href={info.logo.href} title={info.logo.title}>
+          <Style.ImageLogo src={info.logo.src} alt={info.logo.alt} />
+        </Style.LinkLogo>
         <Style.SearchInputContainer>
           <Style.SearchInput
             id='serach_input'
@@ -41,9 +43,9 @@ function SearchBar() {
             onChange={e => { setSearchString(e.target.value);}}
             placeholder={info.SearchInputPlaceholder}
             onKeyPress={checkKeyPressed}
-            tabIndex={1}
+            tabIndex={0}
           />
-          <Style.SearchButton onClick={canBeSubmit}>
+          <Style.SearchButton onClick={canBeSubmit} title={info.searchIcon.title}>
             <Style.SearchIcon src={info.searchIcon.src} alt={info.searchIcon.alt} />
           </Style.SearchButton>
         </Style.SearchInputContainer>

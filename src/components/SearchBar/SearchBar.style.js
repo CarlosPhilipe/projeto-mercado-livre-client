@@ -14,6 +14,8 @@ const Content = styled.div`
   margin: 0 auto;
 `;
 
+const LinkLogo = styled.a``;
+
 const ImageLogo = styled.img`
   margin: auto;
 `;
@@ -54,6 +56,7 @@ const SearchInput = styled.input`
 `;
 
 export default {
+  LinkLogo,
   ImageLogo,
   Container,
   Content,
