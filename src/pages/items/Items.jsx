@@ -7,6 +7,9 @@ import BreadCrumb from '../../components/BreadCrumb';
 import ProductListItems from '../../components/ProductListItems';
 function Items(props) {
   const { items, categories } = props;
+  if (!items) {
+    return (<MainTemplate />);
+  }
 
   return (
     <MainTemplate>
